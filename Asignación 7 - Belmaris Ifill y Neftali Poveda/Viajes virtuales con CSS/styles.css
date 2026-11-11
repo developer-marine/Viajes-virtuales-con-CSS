@@ -1,0 +1,240 @@
+/* Viajes Virtuales — estilos pastel */
+:root {
+  --lavender: #dcd5f5;
+  --pink: #f7dce7;
+  --mint: #dcefe7;
+  --cream: #fffaf3;
+  --ink: #514b60;
+  --muted: #81798d;
+  --white: #ffffff;
+  --accent: #9b83c8;
+  --accent-dark: #7862a5;
+  --shadow: 0 12px 30px rgba(91, 75, 116, .10);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #fbf7ff 0%, #fffaf5 55%, #f5fbf8 100%);
+  color: var(--ink);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+  padding: 18px max(6%, calc((100% - 1120px) / 2));
+  background: rgba(255,255,255,.88);
+  border-bottom: 1px solid #eee7f5;
+  box-shadow: 0 4px 18px rgba(91,75,116,.05);
+}
+
+header h1 {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: 1.55rem;
+  letter-spacing: .2px;
+}
+
+nav { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 13px;
+  border-radius: 22px;
+  transition: .2s ease;
+}
+nav a:hover { background: var(--pink); color: var(--accent-dark); }
+header hr, footer hr { display: none; }
+
+main {
+  width: min(1080px, 90%);
+  margin: 42px auto 64px;
+}
+
+main > h1 {
+  color: #665583;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+  margin: 20px 0 8px;
+}
+
+main > h2 {
+  color: #78669b;
+  font-size: 1.45rem;
+  margin: 42px 0 12px;
+}
+
+main > h3 { color: #78669b; }
+
+main > p { color: #686174; }
+
+main > p[align="center"] { margin: 18px auto 30px; }
+
+main > p[align="center"] img {
+  display: block;
+  width: min(100%, 820px) !important;
+  height: clamp(230px, 42vw, 430px);
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+#destinos { scroll-margin-top: 24px; }
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 22px auto;
+  background: var(--white);
+  border: 1px solid #eee7f3;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+td, th {
+  padding: 14px 16px;
+  border: 0;
+  border-bottom: 1px solid #f0ebf4;
+  text-align: left;
+}
+th {
+  background: #eee9fa;
+  color: #62527f;
+  font-weight: 700;
+}
+tr:last-child td, tr:last-child th { border-bottom: 0; }
+
+main > table[align="center"] {
+  width: 100%;
+  table-layout: fixed;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-spacing: 16px;
+  overflow: visible;
+}
+main > table[align="center"] td {
+  width: 33.333%;
+  padding: 16px;
+  text-align: center;
+  vertical-align: top;
+  background: white;
+  border: 1px solid #eee7f3;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+main > table[align="center"] td img {
+  width: 100% !important;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+main > table[align="center"] td h3 { margin: 14px 0 4px; }
+main > table[align="center"] td p { margin: 5px 0 14px; color: var(--muted); }
+
+body:has(img[src^="fotos/"]) main > table {
+  width: min(760px, 100%);
+  table-layout: fixed;
+  border-spacing: 16px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+body:has(img[src^="fotos/"]) main > table td {
+  width: 50%;
+  padding: 18px;
+  text-align: center;
+  vertical-align: top;
+  background: white;
+  border: 1px solid #eee7f3;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+body:has(img[src^="fotos/"]) main > table img {
+  width: min(100%, 240px) !important;
+  height: 290px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+ul {
+  padding: 18px 24px 18px 42px;
+  background: rgba(220,239,231,.55);
+  border: 1px solid #d9eae1;
+  border-radius: 16px;
+}
+li { padding: 4px 0; }
+
+a {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+a:hover { color: #b46e91; }
+
+main a[href$=".html"]:not(nav a) {
+  display: inline-block;
+  padding: 9px 17px;
+  background: #eee8fa;
+  border-radius: 22px;
+  text-decoration: none;
+  transition: .2s ease;
+}
+main a[href$=".html"]:not(nav a):hover {
+  background: var(--pink);
+  transform: translateY(-2px);
+}
+
+iframe {
+  width: min(100%, 760px);
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+footer {
+  padding: 24px 5%;
+  background: #eee9f7;
+  color: #746b83;
+  text-align: center;
+  font-size: .9rem;
+}
+footer p { margin: 0; }
+
+@media (max-width: 700px) {
+  header { justify-content: center; text-align: center; padding: 18px 5%; }
+  nav { justify-content: center; }
+  main { width: 92%; margin-top: 28px; }
+  main > table[align="center"] { display: block; border-spacing: 0; }
+  main > table[align="center"] tbody,
+  main > table[align="center"] tr { display: block; }
+  main > table[align="center"] td {
+    display: block;
+    width: 100%;
+    margin: 0 0 18px;
+  }
+  body:has(img[src^="fotos/"]) main > table { border-spacing: 0; }
+  body:has(img[src^="fotos/"]) main > table td {
+    display: block;
+    width: 100%;
+    margin-bottom: 18px;
+  }
+  td, th { padding: 11px 10px; }
+}
